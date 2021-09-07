@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Al's Car Dealership</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<!-- Navbar from bootstrap -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Vehicle Inventory System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/vehicles}">Vehicle Management</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Create New Vehicle</h1>
+				<div class="card-body">
+					<form th:action="@{/vehicles}" th:object="${vehicle}" method="POST">
+						<div class="form-group">
+							<label>Vehicle Make</label> 
+							<input type="text" 
+								name="make"
+								th:field="*{make}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Make" />
+						</div>
+
+						<div class="form-group">
+							<label>Vehicle Model</label> 
+							<input type="text" 
+								name="build"
+								th:field="*{build}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Model" />
+						</div>
+
+						<div class="form-group">
+							<label>Vehicle Year</label> 
+							<input type="text" 
+								name="year"
+								th:field="*{year}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Year" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Color</label> 
+							<input type="text" 
+								name="color"
+								th:field="*{color}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Color" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Price</label> 
+							<input type="text" 
+								name="price"
+								th:field="*{price}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Price" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Description</label> 
+							<input type="text" 
+								name="description"
+								th:field="*{description}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Description" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Mileage</label> 
+							<input type="text" 
+								name="mileage"
+								th:field="*{mileage}" 
+								class="form-control"
+								placeholder="Enter the Vehicle Mileage" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Condition</label> 
+							<input type="text" 
+								name="used"
+								th:field="*{used}" 
+								class="form-control"
+								placeholder="Is this vehicle Used or New?" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle Availability</label> 
+							<input type="text" 
+								name="sold"
+								th:field="*{sold}" 
+								class="form-control"
+								placeholder="Is this vehicle sold?" />
+						</div>
+						
+							<div class="form-group">
+							<label>Vehicle On Lot</label> 
+							<input type="text" 
+								name="invDate"
+								th:field="*{invDate}" 
+								class="form-control"
+								placeholder="When did this car get on the lot?" />
+						</div>
+						
+						<div class="form-group">
+							<label>Buyer ID</label> 
+							<input type="text" 
+								name="buyerId"
+								th:field="*{buyerId}" 
+								class="form-control"
+								placeholder="What is the buyer ID?" />
+						</div>
+						
+							<div class="form-group">
+							<label>VIN</label> 
+							<input type="text" 
+								name="vin"
+								th:field="*{vin}" 
+								class="form-control"
+								placeholder="Enter the VIN" />
+						</div>
+						
+						
+
+						<div class="box-footer">
+							<button type="submit" 
+							class="btn btn-primary">
+							Submit</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

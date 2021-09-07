@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Vehicle Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Navbar from bootstrap -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">Home</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+     <li class="nav-item">
+        <a class="nav-link" th:href="@{/used}">Used</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/newCar}">New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/vehicles}">Vehicle Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">Login</a>
+        <li class="nav-item">
+        <a class="nav-link" th:href="@{/signUp}">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+	<div class="container">
+		<div class="row">
+			<h1>Used Vehicles</h1>
+		</div>
+	</div>
+
+	<table class="table table-striped table-bordered">
+		<thead class="table-dark">
+			<tr>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Color</th>
+				<th>Price</th>
+				<th>Description</th>
+				<th>Mileage</th>
+				<th>Date</th>
+				<th>VIN</th>
+				<th>Buy?</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<!-- The 'vehicles' is referencing the vehicles we had in vehicleController -->
+			<!-- ${} is thymeleaf syntax to display model -->
+			<!-- vehicles is the name of the model -->
+			<tr th:each="vehicle: ${newCar}">
+				<td th:text="${vehicle.make}"></td>
+				<td th:text="${vehicle.build}"></td>
+				<td th:text="${vehicle.year}"></td>
+				<td th:text="${vehicle.color}"></td>
+				<td th:text="${vehicle.price}"></td>
+				<td th:text="${vehicle.description}"></td>
+				<td th:text="${vehicle.mileage}"></td>
+				<td th:text="${vehicle.invDate}"></td>
+				<td th:text="${vehicle.vin}"></td>
+				
+				<td>
+					<a th:href = "@{/newCar/edit/{vin}(vin=${vehicle.vin})}"
+					class = "btn btn-primary">Purchase $</a>
+				
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

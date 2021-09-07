@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Al's Car Dealership</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Navbar from bootstrap -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">Home</a>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+     <li class="nav-item">
+        <a class="nav-link" th:href="@{/used}">Used</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/newCar}">New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/vehicles}">Vehicle Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">Login</a>
+        <li class="nav-item">
+        <a class="nav-link" th:href="@{/signUp}">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+	<div class="container">
+		<div class="row">
+			<h1>Welcome to Al's Dealership!</h1>
+		</div>
+	</div>
+	
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">We have new cars!</li>
+		<li class="list-group-item">We have used cars!</li>
+		<li class="list-group-item">Browse our inventory!</li>
+	</ul>
+
+</body>
+</html>
